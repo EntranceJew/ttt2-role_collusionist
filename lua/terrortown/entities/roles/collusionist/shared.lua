@@ -287,6 +287,7 @@ if SERVER then
 				-- donator:PrintMessage(HUD_PRINTCENTER, "You have colluded with the collusionist!")
 
 				ply:SetRole(role, team) -- added the team parameter mainly for the Jackal right now
+				donator:SetRole(ROLE_COLLUSIONIST, TEAM_JESTER)
 				donator:Kill()
 
 				roles.JESTER.SpawnJesterConfetti(donator)
