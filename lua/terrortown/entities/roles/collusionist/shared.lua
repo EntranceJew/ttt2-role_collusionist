@@ -288,7 +288,12 @@ if SERVER then
 
 				ply:SetRole(role, team) -- added the team parameter mainly for the Jackal right now
 				donator:SetRole(ROLE_COLLUSIONIST, TEAM_JESTER)
-				donator:Kill()
+				local d_health = GetConVar("ttt2_collusionist_donor_health"):GetFloat()
+				if d_health > 0 then
+					donator:SetHealth(d_health)
+				else
+					donator:Kill()
+				end
 
 				roles.JESTER.SpawnJesterConfetti(donator)
 
